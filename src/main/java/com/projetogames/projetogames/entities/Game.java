@@ -14,10 +14,13 @@ public class Game {
     @Column(name = "game_year") // customiza o nome da table do BD
     private Integer year;
     private String genre;
-    private String platform;
+    private String platforms;
     private Double score;
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT") //define que no banco de dados o texto poderá ser usado com valores acima de 256 caracteres
     private String shortDescription;
+    @Column(columnDefinition = "TEXT")
     private String LongDescription;
 
     public Game (){};
@@ -27,7 +30,7 @@ public class Game {
         this.title = title;
         this.year = year;
         this.genre = genre;
-        this.platform = platform;
+        this.platforms = platforms;
         this.score = score;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
@@ -66,12 +69,12 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlatform() {
-        return platform;
+    public String getPlatforms() {
+        return platforms;
     }
 
-    public void setPlatform(String platform) {
-        this.platform = platform;
+    public void setPlatform(String platforms) {
+        this.platforms = platforms;
     }
 
     public Double getScore() {
