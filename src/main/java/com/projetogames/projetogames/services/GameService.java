@@ -1,7 +1,6 @@
 package com.projetogames.projetogames.services;
 
 import com.projetogames.projetogames.dto.GameMinDTO;
-import com.projetogames.projetogames.entities.Game;
 import com.projetogames.projetogames.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
