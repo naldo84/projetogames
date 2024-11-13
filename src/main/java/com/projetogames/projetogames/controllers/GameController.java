@@ -1,9 +1,11 @@
 package com.projetogames.projetogames.controllers;
 
+import com.projetogames.projetogames.dto.GameDTO;
 import com.projetogames.projetogames.dto.GameMinDTO;
 import com.projetogames.projetogames.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +17,11 @@ public class GameController {
 
     @Autowired
     private GameService gameService;
+
+    @GetMapping (value = "/{id}") //Essa anotação indica que o valor do {id} na URL será mapeado para o parâmetro id do métodoh
+    public GameDTO findById(@PathVariable Long id){
+        return gameService.findById(id);
+    }
 
     @GetMapping
     public List<GameMinDTO> findAll(){
