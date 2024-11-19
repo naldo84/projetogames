@@ -6,6 +6,7 @@ import jakarta.persistence.Table;
 
 import java.util.Objects;
 
+
 @Entity
 @Table(name = "tb_belonging")
 public class Belonging {
@@ -17,9 +18,9 @@ public class Belonging {
 
     public Belonging(){};
 
-    public Belonging(Game game, GameList gameList, Integer position) {
+    public Belonging(Game game, GameList list, Integer position) {
         id.setGame(game);
-        id.setGamelist(gameList);
+        id.setList(list);
         this.position = position;
     }
 
@@ -44,11 +45,11 @@ public class Belonging {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Belonging belonging = (Belonging) o;
-        return Objects.equals(id, belonging.id) && Objects.equals(position, belonging.position);
+        return Objects.equals(id, belonging.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, position);
+        return Objects.hashCode(id);
     }
 }
